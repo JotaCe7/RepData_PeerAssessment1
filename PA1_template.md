@@ -4,7 +4,7 @@ output:
   html_document:
     keep_md: true
 ---
-
+# Reproducible Research - Course Poject
 
 ## Loading and preprocessing the data
 
@@ -52,7 +52,8 @@ rug(steps_by_date$steps)
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
-**3. ***Mean*** and  ***Median*** of the total number of steps taken per day:**
+
+**3. *Mean* and  *Median* of the total number of steps taken per day:**
 
 ```r
 mean.steps_by_date <- mean(steps_by_date$steps)
@@ -71,6 +72,7 @@ plot(meansteps_by_interval,type = "l", main = "Daily Activity Pattern",
 ```
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
+
 **2.Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?**
 
 ```r
@@ -162,7 +164,7 @@ activity_tidy$day <- (activity_tidy
                       %>% mutate(date = as.factor(date)))$date
 ```
 
-** 2. Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).**
+**2. Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).**
 
 
 ```r
@@ -175,3 +177,4 @@ xyplot(steps ~ interval | day, data = meansteps_by_interval_by_day, layout = c(1
 
 ![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
 
+**The number of steps taken, averaged by interval, are greater in weekends than in weekdays.**

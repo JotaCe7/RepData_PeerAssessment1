@@ -4,7 +4,7 @@ output:
   html_document:
     keep_md: true
 ---
-
+# Reproducible Research - Course Poject
 
 ## Loading and preprocessing the data
 
@@ -29,7 +29,8 @@ hist(steps_by_date$steps ,breaks = 20,main = "Histogram of total number of steps
      xlab = "Total number of steps per day")
 rug(steps_by_date$steps)
 ```
-**3. ***Mean*** and  ***Median*** of the total number of steps taken per day:**
+
+**3. *Mean* and  *Median* of the total number of steps taken per day:**
 ```{r}
 mean.steps_by_date <- mean(steps_by_date$steps)
 median.steps_by_date <- median(steps_by_date$steps)
@@ -44,6 +45,7 @@ meansteps_by_interval <- aggregate(steps ~ interval, data = activity, FUN=mean)
 plot(meansteps_by_interval,type = "l", main = "Daily Activity Pattern",
      xlab = "5-minute interval", ylab = "Averaged steps")
 ```
+
 **2.Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?**
 ```{r}
 meansteps_by_interval[which.max(meansteps_by_interval$steps),]$interval
@@ -116,7 +118,7 @@ activity_tidy$day <- (activity_tidy
                       %>% mutate(date = as.factor(date)))$date
 ```
 
-** 2. Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).**
+**2. Make a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).**
 
 ```{r}
 # Load the lattice package
@@ -126,3 +128,4 @@ xyplot(steps ~ interval | day, data = meansteps_by_interval_by_day, layout = c(1
        xlab = "Number of steps", ylab = "Interval")
 ```
 
+**The number of steps taken, averaged by interval, are greater in weekends than in weekdays.**
