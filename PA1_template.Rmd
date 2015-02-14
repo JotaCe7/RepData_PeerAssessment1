@@ -69,8 +69,8 @@ Let's replace those missing values by their respective 5-minute interval mean.
 ```{r}
 # Create a vector containing the indices of the missing values in the activity data frame
 na.indices <- which(!complete.cases(activity))
-# or which(!is.na(activity$steps)); because in this particular case, the NA values are only in the steps column
-# Interval where there are missing values
+# or which(!is.na(activity$steps)); because in this particular case, the NA values are only in the steps
+# column Interval where there are missing values
 na.intervals <- activity$interval[na.indices]
 # Mean total number of steps taken per interval of those intervals
 na.meansteps_by_interval <- meansteps_by_interval$steps[sapply(na.intervals,
@@ -110,7 +110,7 @@ The **median** has changed, but still very similar than the first case.
 ```{r}
 # Load the dplyr package
 library(dplyr)
-# Create thenew factor variable usign the pipeline operator
+# Create the new factor variable usign the pipeline operator
 activity_tidy$day <- (activity_tidy 
                       %>% mutate(date = as.Date(date)) 
                       %>% mutate(date = strftime(date,"%u")) 
