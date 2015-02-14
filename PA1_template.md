@@ -88,7 +88,7 @@ So, the interval 835 (at 02:55), on average across all the days in the dataset, 
 
 Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.  
 
-**1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)**
+**1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)**  
 As we saw in the summary of the activty dataset, there are 2034 NA values in activity$steps.
 Lets's corroborate it:
 
@@ -101,8 +101,8 @@ sum(sapply(activity$steps,is.na))
 ```
 As expected, there are 2304 missing values in the data set.  
 
-**2. Devise a strategy for filling in all of the missing values in the dataset. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.**
-Let's replace those missing values by their respective 5-minute interval mean.
+**2. Devise a strategy for filling in all of the missing values in the dataset. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.**  
+Let's replace those missing values by their respective 5-minute interval mean.  
 
 ```r
 # Create a vector containing the indices of the missing values in the activity data frame
